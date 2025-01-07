@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --mode development --open",
+    "dev": "webpack serve --mode development --open",
     "build": "webpack --mode production"
   },
   "keywords": [],
@@ -11,8 +11,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@mui/material": "^6.3.1",
+    "@mui/styled-engine-sc": "^6.3.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "styled-components": "^6.1.14"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
