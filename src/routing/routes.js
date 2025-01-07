@@ -9,6 +9,16 @@ export function routes() {
     },
     {
       path: "/projects",
+      component: HomePage,
+      errorBoundary: HomePage,
+    },
+    {
+      path: "/projects/:projectId",
+      component: ProjectDetails,
+      errorBoundary: HomePage,
+    },
+    {
+      path: "/projects/:projectId/:actionType",
       component: ProjectDetails,
       errorBoundary: HomePage,
     },
