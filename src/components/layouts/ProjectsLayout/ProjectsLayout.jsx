@@ -64,7 +64,9 @@ function ProjectsLayout() {
         </div>
       </aside>
 
-      <Outlet />
+      <div className="ml-64">
+        <Outlet />
+      </div>
     </div>
   );
 }
