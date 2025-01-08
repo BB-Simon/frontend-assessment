@@ -18,7 +18,7 @@ export function routes() {
       errorBoundary: HomePage,
     },
     {
-      path: "/projects/:projectId/:actionType",
+      path: "/projects/projectId",
       component: ProjectDetails,
       errorBoundary: HomePage,
     },

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useNavigate } from "react-router";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -19,6 +20,12 @@ const rows = [
 ];
 
 export default function ProjectsList() {
+  const navigate = useNavigate();
+  const handleOnClick = (id) => {
+    navigate(`/projects/projectId`);
+    // navigate(`/projects/${id}/edit`);
+  };
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -46,7 +53,7 @@ export default function ProjectsList() {
               <TableCell align="right">{row.endDate}</TableCell>
               <TableCell align="right">{row.projectManager}</TableCell>
               <TableCell align="right">
-                <EditButton />
+                <EditButton onClick={() => handleOnClick(row.id)} />
               </TableCell>
             </TableRow>
           ))}

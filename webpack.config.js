@@ -5,6 +5,8 @@ module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
   output: {
     path: path.resolve(__dirname, "dist"),
+    filename: "main.js",
+    publicPath: "/", // Ensures assets are served from the root
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -36,7 +38,13 @@ module.exports = {
     ],
   },
   devServer: {
+    static: {
+      directory: path.join(__dirname, "public"), // Serve static files
+    },
     port: 3000,
-    historyApiFallback: true,
+    hot: true,
+    historyApiFallback: true, // SPA routing
+    open: true, // Opens the browser on start
   },
+  mode: "development",
 };
